@@ -82,7 +82,7 @@ body {
 #wrapper {
   position: relative;
   transform-style: preserve-3d;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .card-back,
