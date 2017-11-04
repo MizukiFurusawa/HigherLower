@@ -20,5 +20,37 @@
     playerCard.textContent = playerValue;
   }
 
+  function check(guess) {
+    var str;
+    wrapper.classList.add('open');
+    if (playerValue === dealerValue) {
+      str = 'draw';
+    } else {
+      str = 'You ' + getResultStr(guess);
+    }
+    result.textContent = str;
+    result.classList.remove('hidden');
+  }
+
+  function getResultStr(guess) {
+    if (
+      playerValue > dealerValue && guess === 'higher'
+      || playerValue < dealerValue && guess === 'lower'
+    ) {
+      return 'win!';
+    } else {
+      return 'lose...';
+    }
+  }
+
   init();
+
+  higher.addEventListener('click', function() {
+    check('higher');
+  });
+
+  lower.addEventListener('click', function() {
+    check('lower');
+  });
+
 })();
