@@ -24,6 +24,8 @@
   function check(guess) {
     var str;
     wrapper.classList.add('open');
+    higher.classList.add('disabled');
+    lower.classList.add('disabled');
     if (playerValue === dealerValue) {
       str = 'draw';
     } else {
@@ -57,6 +59,8 @@
   dealerCard.addEventListener('click', function() {
     result.classList.add('hidden');
     wrapper.classList.remove('open');
+    higher.classList.remove('disabled');
+    lower.classList.remove('disabled');
     wrapper.addEventListener('transitionend', init);
   })
 })();
