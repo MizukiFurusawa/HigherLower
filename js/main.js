@@ -18,6 +18,7 @@
     dealerCard.textContent = dealerValue;
     playerValue = getRandom();
     playerCard.textContent = playerValue;
+    wrapper.removeEventListener('transitionend', init);
   }
 
   function check(guess) {
@@ -53,4 +54,9 @@
     check('lower');
   });
 
+  dealerCard.addEventListener('click', function() {
+    result.classList.add('hidden');
+    wrapper.classList.remove('open');
+    wrapper.addEventListener('transitionend', init);
+  })
 })();
